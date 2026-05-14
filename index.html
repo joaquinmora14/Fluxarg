@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fluxa — Diseño web que convierte</title>
+<link rel="icon" type="image/png" href="https://i.ibb.co/J8NP5FY/Adobe-Express-file.png">
+<link rel="apple-touch-icon" href="https://i.ibb.co/J8NP5FY/Adobe-Express-file.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -972,7 +974,6 @@ let chartBarsInView = false;
 function setBarsTo(targetIsZero){
   const fills=document.querySelectorAll('.bar-fill');
   if(targetIsZero){
-    
     fills.forEach((fill,i)=>{
       fill.style.transition='width .65s cubic-bezier(0.77,0,0.175,1)';
       setTimeout(()=>{
@@ -981,7 +982,6 @@ function setBarsTo(targetIsZero){
     });
   } else {
     fills.forEach((fill,i)=>{
-      
       fill.style.transition='none';
       fill.style.width='0';
       void fill.offsetWidth;
@@ -1005,7 +1005,7 @@ const chartObs=new IntersectionObserver(es=>{
   });
 },{
   threshold:0,
-  rootMargin:'-30% 0px -30% 0px'  
+  rootMargin:'-30% 0px -30% 0px'
 });
 const chartEl=document.getElementById('chartBars');
 if(chartEl)chartObs.observe(chartEl);
