@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fluxa — Diseño web que convierte</title>
 <link rel="icon" type="image/png" href="./fluxa-icon.ico">
-<link rel="apple-touch-icon" href="./fluxa-icon.ico">
+ <link rel="apple-touch-icon" href="./fluxa-icon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -600,22 +600,45 @@ footer{
   .steps-wrap{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  .hero-row{flex-direction:column;align-items:flex-start;gap:1.5rem}
-  .hero-nums{gap:1.75rem}
+  /* HERO mobile - todo cabe sin scroll */
+  #hero{
+    min-height:auto;
+    padding:75px 5vw 40px;
+    justify-content:flex-start;
+  }
+  .hero-tag{
+    margin-bottom:1rem;
+    font-size:10.5px;
+    padding:4px 12px 4px 8px;
+  }
+  .hero-h1{
+    font-size:clamp(34px,8vw,48px);
+    line-height:1;
+    margin-bottom:1.25rem;
+    letter-spacing:-.04em;
+  }
+  .hero-row{flex-direction:column;align-items:flex-start;gap:1.25rem}
+  .hero-desc{font-size:14px;line-height:1.6;max-width:100%}
+  .hero-nums{gap:2rem}
+  .hn-val{font-size:32px}
+  .hn-label{font-size:10px}
   .hero-btns{width:100%}
-  .btn-lime,.btn-ghost{flex:1;justify-content:center}
+  .btn-lime,.btn-ghost{flex:1;justify-content:center;padding:12px 20px;font-size:13px}
+
+  /* Otros */
   .cat-grid{grid-template-columns:1fr}
   .c-card.sp2,.c-card.tall{grid-column:span 1;grid-row:span 1}
   .steps-wrap{grid-template-columns:1fr 1fr}
   .con-grid{grid-template-columns:1fr}
   .cg-item{border-right:none;border-bottom:1px solid rgba(244,239,230,.07)}
   .cg-item:last-child{border-bottom:none}
-  /* Mobile menu: bigger, comfortable, all items visible */
+
+  /* NAV mobile - mas compacto */
   #nav{
-    left:6px;right:6px;
+    left:8px;right:8px;
     transform:none;
     max-width:none;
-    padding:5px 8px 9px 16px;
+    padding:6px 6px 6px 14px;
     gap:0;
     top:10px;
     width:auto;
@@ -624,29 +647,41 @@ footer{
     opacity:1;
     animation:none;
   }
-  .nav-logo{font-size:14px;margin-right:0;flex-shrink:0;line-height:1}
-  .nav-dot{width:7px;height:7px}
+  .nav-logo{font-size:13px;margin-right:0;flex-shrink:0;line-height:1;gap:5px}
+  .nav-dot{width:5px;height:5px}
   .nav-links{flex:1;justify-content:center;gap:0;min-width:0;align-items:center;padding:0;margin:0}
   .nav-links li{display:flex;align-items:center;list-style:none}
-  .nav-links li a{font-size:11.5px;padding:5px 8px;letter-spacing:-.01em;line-height:1;display:block}
-  /* CTA: noticeably smaller than the nav so it has clear margin around it */
-  .nav-cta{font-size:10.5px!important;padding:5px 12px!important;flex-shrink:0;letter-spacing:-.01em;line-height:1.2;display:block}
-  #mbox{height:min(92vh,580px)}
+  .nav-links li a{font-size:10.5px;padding:4px 7px;letter-spacing:-.01em;line-height:1;display:block}
+  .nav-cta{font-size:9.5px!important;padding:5px 10px!important;flex-shrink:0;letter-spacing:-.01em;line-height:1.2;display:block}
+
+  /* Reducir ruido visual */
+  #bg-canvas{opacity:.2}
 }
 @media(max-width:480px){
+  /* HERO ultra mobile */
+  #hero{padding:85px 5vw 50px}
+  .hero-h1{font-size:clamp(32px,9.5vw,44px);margin-bottom:1.5rem}
+  .hero-desc{font-size:13.5px}
+  .hero-tag{font-size:10.5px;margin-bottom:1.25rem}
+  .hn-val{font-size:28px}
+  .hero-nums{gap:1.5rem;flex-direction:row}
+  .btn-lime,.btn-ghost{font-size:12.5px;padding:11px 18px}
+
+  /* Process en columna */
   .steps-wrap{grid-template-columns:1fr}
-  .hero-nums{flex-direction:row;gap:2rem}
   .about-callout{flex-direction:column;text-align:center}
-  /* Tighten the menu but keep all items */
-  #nav{padding:7px 7px 7px 13px}
-  .nav-logo{font-size:13px}
-  .nav-links li a{font-size:10.5px;padding:5px 6px}
-  .nav-cta{font-size:10px!important;padding:5px 11px!important}
+
+  /* Nav mas chico */
+  #nav{padding:5px 5px 5px 12px;top:8px;left:6px;right:6px}
+  .nav-logo{font-size:12px}
+  .nav-links li a{font-size:9.5px;padding:4px 5px}
+  .nav-cta{font-size:9px!important;padding:4px 9px!important}
 }
 @media(max-width:380px){
-  /* Tightest: drop Proceso (least critical), keep the rest */
-  .nav-links li:nth-child(4){display:none}
-  .nav-links li a{font-size:10.5px;padding:5px 7px}
+  /* Ocultar Proceso para que entre todo */
+  .nav-links li:nth-child(3){display:none}
+  .nav-links li a{font-size:10px;padding:4px 6px}
+  .hero-h1{font-size:clamp(28px,8.5vw,38px)}
 }
 
 /* prefers-reduced-motion — keep opacity/color, remove transforms */
@@ -864,8 +899,8 @@ footer{
     </a>
   </div>
   <div class="con-grid rv rv-d4">
-    <div class="cg-item"><p class="cg-l">Email</p><p class="cg-v">fluxaarg@gmail.com</p></div>
-    <div class="cg-item"><p class="cg-l">WhatsApp</p><p class="cg-v">11 2306-0495</p></div>
+    <div class="cg-item"><p class="cg-l">Email</p><p class="cg-v">@fluxaarg@gmail.com</p></div>
+    <div class="cg-item"><p class="cg-l">WhatsApp</p><p class="cg-v">+54 911 2306-0495</p></div>
     <div class="cg-item"><p class="cg-l">Ubicación</p><p class="cg-v">Buenos Aires, Argentina</p></div>
   </div>
 </section>
@@ -895,8 +930,18 @@ function closeMM(){document.getElementById('mobile-menu').classList.remove('open
     reset(init){this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*180+70;this.col=COLS[Math.floor(Math.random()*COLS.length)];this.vx=(Math.random()-.5)*.2;this.vy=(Math.random()-.5)*.2;this.a=Math.random()*.06+.022;this.ph=init?Math.random()*Math.PI*2:0}
     tick(){this.x+=this.vx;this.y+=this.vy;this.ph+=.005;if(this.x<-this.r*2||this.x>W+this.r*2||this.y<-this.r*2||this.y>H+this.r*2)this.reset()}
     draw(){const a=this.a+Math.sin(this.ph)*.016;const hex=Math.round(a*255).toString(16).padStart(2,'0');const g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r);g.addColorStop(0,this.col+hex);g.addColorStop(1,this.col+'00');ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill()}}
-  for(let i=0;i<8;i++)pts.push(new P());
-  const loop=()=>{ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.tick();p.draw()});requestAnimationFrame(loop)};loop();
+  const _isMobileBg=window.innerWidth<768;
+  const _bgCount=_isMobileBg?3:8;for(let i=0;i<_bgCount;i++)pts.push(new P());
+  let _bgFrame=0;
+  const loop=()=>{
+    _bgFrame++;
+    if(!_isMobileBg||_bgFrame%2===0){
+      ctx.clearRect(0,0,W,H);
+      pts.forEach(p=>{p.tick();p.draw()});
+    }
+    requestAnimationFrame(loop);
+  };
+  loop();
 })();
 
 /* ════ SPARKLES ════ */
@@ -910,8 +955,18 @@ function closeMM(){document.getElementById('mobile-menu').classList.remove('open
     reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.sz=Math.random()*2.6+.7;this.col=COLS[Math.floor(Math.random()*COLS.length)];this.life=0;this.maxL=Math.random()*80+45;this.ang=Math.random()*Math.PI*2;this.spin=(Math.random()-.5)*.06}
     draw(){const p=this.life/this.maxL;const a=p<.4?p*2.4:(1-p)*1.3;const s=this.sz*Math.min(a,1);ctx.save();ctx.globalAlpha=Math.max(0,Math.min(a*.8,1));ctx.translate(this.x,this.y);ctx.rotate(this.ang);ctx.fillStyle=this.col;ctx.beginPath();ctx.moveTo(0,-s*2.8);ctx.lineTo(s*.65,-s*.65);ctx.lineTo(s*2.8,0);ctx.lineTo(s*.65,s*.65);ctx.lineTo(0,s*2.8);ctx.lineTo(-s*.65,s*.65);ctx.lineTo(-s*2.8,0);ctx.lineTo(-s*.65,-s*.65);ctx.closePath();ctx.fill();ctx.restore()}
     tick(){this.life++;this.ang+=this.spin;if(this.life>=this.maxL)this.reset()}}
-  for(let i=0;i<25;i++){const s=new S();s.life=Math.floor(Math.random()*s.maxL);stars.push(s)}
-  const loop=()=>{ctx.clearRect(0,0,W,H);stars.forEach(s=>{s.tick();s.draw()});requestAnimationFrame(loop)};loop();
+  const _isMobileSp=window.innerWidth<768;
+  const _spCount=_isMobileSp?10:25;for(let i=0;i<_spCount;i++){const s=new S();s.life=Math.floor(Math.random()*s.maxL);stars.push(s)}
+  let _spFrame=0;
+  const loop=()=>{
+    _spFrame++;
+    if(!_isMobileSp||_spFrame%2===0){
+      ctx.clearRect(0,0,W,H);
+      stars.forEach(s=>{s.tick();s.draw()});
+    }
+    requestAnimationFrame(loop);
+  };
+  loop();
 })();
 
 /* ════ REVEAL ════ */
