@@ -641,26 +641,27 @@ footer{
   .cg-item{border-right:none;border-bottom:1px solid rgba(244,239,230,.07)}
   .cg-item:last-child{border-bottom:none}
 
-  /* NAV mobile - mas compacto */
+  /* NAV mobile - pill centrado como desktop */
   #nav{
-    left:8px;right:8px;
-    transform:none;
-    max-width:none;
-    padding:6px 6px 6px 14px;
-    gap:0;
-    top:10px;
+    left:50%;
+    right:auto;
+    transform:translateX(-50%);
+    max-width:calc(100vw - 20px);
+    padding:7px 7px 7px 16px;
+    gap:4px;
+    top:12px;
     width:auto;
-    justify-content:space-between;
+    justify-content:flex-start;
     align-items:center;
     opacity:1;
     animation:none;
   }
-  .nav-logo{font-size:13px;margin-right:0;flex-shrink:0;line-height:1;gap:5px}
+  .nav-logo{font-size:13px;margin-right:6px;flex-shrink:0;line-height:1;gap:5px}
   .nav-dot{width:5px;height:5px}
-  .nav-links{flex:1;justify-content:center;gap:0;min-width:0;align-items:center;padding:0;margin:0}
+  .nav-links{display:flex;gap:0;align-items:center;padding:0;margin:0;flex:0 0 auto}
   .nav-links li{display:flex;align-items:center;list-style:none}
-  .nav-links li a{font-size:10.5px;padding:4px 7px;letter-spacing:-.01em;line-height:1;display:block}
-  .nav-cta{font-size:9.5px!important;padding:5px 10px!important;flex-shrink:0;letter-spacing:-.01em;line-height:1.2;display:block}
+  .nav-links li a{font-size:10.5px;padding:5px 8px;letter-spacing:-.01em;line-height:1;display:block;white-space:nowrap}
+  .nav-cta{font-size:10px!important;padding:6px 12px!important;flex-shrink:0;letter-spacing:-.01em;line-height:1.2;display:block;margin-left:4px}
 
   /* Reducir ruido visual */
   #bg-canvas{opacity:.2}
@@ -679,11 +680,11 @@ footer{
   .steps-wrap{grid-template-columns:1fr}
   .about-callout{flex-direction:column;text-align:center}
 
-  /* Nav mas chico */
-  #nav{padding:5px 5px 5px 12px;top:8px;left:6px;right:6px}
-  .nav-logo{font-size:12px}
-  .nav-links li a{font-size:9.5px;padding:4px 5px}
-  .nav-cta{font-size:9px!important;padding:4px 9px!important}
+  /* Nav mas chico - mantener pill centrado */
+  #nav{padding:6px 6px 6px 14px;top:10px;left:50%;right:auto;transform:translateX(-50%);max-width:calc(100vw - 16px)}
+  .nav-logo{font-size:12px;margin-right:4px;gap:4px}
+  .nav-links li a{font-size:10px;padding:4px 6px}
+  .nav-cta{font-size:9.5px!important;padding:5px 11px!important;margin-left:2px}
 }
 @media(max-width:380px){
   /* Ocultar Proceso para que entre todo */
