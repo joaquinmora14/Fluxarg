@@ -4,32 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fluxa — Diseño web que convierte</title>
-<link rel="icon" type="image/png" href="./fluxa-icon.ico">
- <link rel="apple-touch-icon" href="./fluxa-icon.ico">
+<link rel="icon" type="image/png" href="./fluxa-icon.ico"> 
+<link rel="apple-touch-icon" href="./fluxa-icon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ═══ EMIL'S CUSTOM EASING CURVES ═══ */
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#08090a;--cream:#F4EFE6;--cream2:#EDE7D8;
   --lime:#B8FF35;--coral:#FF5F4B;--sky:#3BDFFF;--violet:#9B6DFF;--gold:#FFD166;
   --fd:'Syne',sans-serif;--fs:'Instrument Serif',serif;--fb:'DM Sans',sans-serif;
 
-  /* Emil's curves — cubic-bezier strong variants */
-  --eo:cubic-bezier(0.23,1,0.32,1);          /* ease-out fuerte */
-  --eio:cubic-bezier(0.77,0,0.175,1);        /* ease-in-out fuerte */
-  --edrawer:cubic-bezier(0.32,0.72,0,1);     /* iOS drawer */
-  --espring:cubic-bezier(0.34,1.56,0.64,1);  /* overshoot suave */
+  --eo:cubic-bezier(0.23,1,0.32,1);          
+  --eio:cubic-bezier(0.77,0,0.175,1);        
+  --edrawer:cubic-bezier(0.32,0.72,0,1);     
+  --espring:cubic-bezier(0.34,1.56,0.64,1);  
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--ink);color:var(--cream);font-family:var(--fb);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* BG CANVAS */
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35}
 
-/* NAV */
 #nav{
   position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-80px);
   z-index:500;
@@ -94,7 +91,6 @@ body{background:var(--ink);color:var(--cream);font-family:var(--fb);overflow-x:h
 
 section{position:relative;z-index:1}
 
-/* HERO */
 #hero{
   min-height:85vh;
   display:flex;flex-direction:column;justify-content:center;
@@ -112,7 +108,7 @@ section{position:relative;z-index:1}
   padding:6px 16px 6px 9px;
   font-size:12px;font-weight:500;color:var(--lime);
   margin-bottom:2.5rem;width:fit-content;
-  /* Emil: 95% scale + opacity, never scale(0) */
+  
   opacity:0;transform:scale(.96) translateY(12px);
   animation:tagIn .7s var(--eo) .3s forwards;
 }
@@ -129,7 +125,7 @@ section{position:relative;z-index:1}
   position:relative;z-index:2;
   overflow:hidden;
 }
-/* Word stagger — Emil: 50-80ms between items */
+
 .hw{
   display:inline-block;
   opacity:0;transform:translateY(110%);
@@ -149,7 +145,6 @@ section{position:relative;z-index:1}
   letter-spacing:-.02em;
   color:var(--cream);
 }
-
 
 .hero-row{
   display:flex;align-items:flex-end;
@@ -182,7 +177,6 @@ section{position:relative;z-index:1}
   align-items:center;flex-wrap:wrap;
 }
 
-/* Buttons — Emil: scale(.97) on press */
 .btn-lime{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--lime);color:var(--ink);
@@ -207,10 +201,6 @@ section{position:relative;z-index:1}
 .btn-ghost:active{transform:scale(.97)}
 .ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;flex-shrink:0}
 
-/* GIANT FLUXA NAME — broken light flicker like a faulty neon */
-
-
-/* COLOR STRIP */
 .color-strip{
   height:4px;
   background:linear-gradient(90deg,var(--lime),var(--sky),var(--violet),var(--coral),var(--gold),var(--lime));
@@ -220,7 +210,6 @@ section{position:relative;z-index:1}
 }
 @keyframes shift{to{background-position:200% 0}}
 
-/* ABOUT */
 #sobre-nosotros{
   background:var(--cream);color:var(--ink);
   padding:clamp(60px,10vw,130px) 6vw;
@@ -281,9 +270,6 @@ section{position:relative;z-index:1}
 .ch-b{background:rgba(59,223,255,.18);color:#005f73}
 .ch-r{background:rgba(255,95,75,.18);color:#8b2010}
 
-/* ═══════════════════════════════════════
-   POR QUÉ CONTRATARNOS — chart section
-═══════════════════════════════════════ */
 #por-que{
   background:var(--ink);color:var(--cream);
   padding:clamp(70px,10vw,140px) 6vw;
@@ -309,7 +295,6 @@ section{position:relative;z-index:1}
 }
 .pq-intro strong{color:var(--cream);font-weight:500}
 
-/* Chart */
 .chart-card{
   background:rgba(244,239,230,.025);
   border:1px solid rgba(244,239,230,.08);
@@ -332,7 +317,6 @@ section{position:relative;z-index:1}
 .lg-with{background:var(--lime)}
 .lg-without{background:rgba(244,239,230,.18)}
 
-/* Bars */
 .bars{
   display:flex;flex-direction:column;gap:1.5rem;
 }
@@ -369,14 +353,13 @@ section{position:relative;z-index:1}
   padding-right:10px;
   font-family:var(--fd);font-size:13px;font-weight:700;
   color:var(--ink);
-  /* Emil: ease-out strong, animated by JS */
+  
   transition:width 1.2s var(--eo);
 }
 .bar-fill.with{background:linear-gradient(90deg,var(--lime),#9eff00)}
 .bar-fill.without{background:rgba(244,239,230,.18);color:rgba(244,239,230,.6)}
 .bar-fill.without .bar-val{color:rgba(244,239,230,.7)}
 
-/* Stat cards under chart */
 .stat-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -409,9 +392,6 @@ section{position:relative;z-index:1}
   line-height:1.55;
 }
 
-
-
-/* GRID */
 .cat-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -468,10 +448,6 @@ section{position:relative;z-index:1}
 .card-bar{position:absolute;bottom:0;left:0;right:0;height:3px;z-index:5;opacity:0;transition:opacity 240ms var(--eo)}
 .c-card:hover .card-bar{opacity:1}
 
-/* ═══ MODAL ═══ */
-
-
-/* PROCESS */
 #como-trabajamos{
   background:var(--cream);color:var(--ink);
   padding:clamp(60px,10vw,130px) 6vw;
@@ -516,7 +492,6 @@ section{position:relative;z-index:1}
 .step-t{font-family:var(--fd);font-size:18px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
 .step-d{font-size:13.5px;line-height:1.65;color:rgba(8,9,10,.46)}
 
-/* CONTACT */
 #contacto{
   background:var(--ink);
   padding:clamp(80px,12vw,160px) 6vw;
@@ -580,7 +555,6 @@ footer{
   position:relative;z-index:1;flex-wrap:wrap;gap:.5rem;
 }
 
-/* ═══ REVEAL — Emil's curve, stagger via delays ═══ */
 .rv{
   opacity:0;
   transform:translateY(28px);
@@ -591,7 +565,6 @@ footer{
 .rv-d3{transition-delay:180ms}.rv-d4{transition-delay:240ms}
 .rv-d5{transition-delay:300ms}
 
-/* RESPONSIVE */
 @media(max-width:1024px){
   .cat-grid{grid-template-columns:repeat(2,1fr)}
   .c-card.sp2{grid-column:span 1}
@@ -600,15 +573,15 @@ footer{
   .steps-wrap{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  /* Hide canvas elements - they're useless on mobile and tank performance */
+  
   #bg-canvas{display:none!important}
   #sp-canvas{display:none!important}
-  /* Skip entrance animations - mostrar todo directamente */
+  
   .hw{animation:none!important;opacity:1!important;transform:none!important}
   .hero-tag{animation:none!important;opacity:1!important;transform:none!important}
   .hero-row{animation:none!important;opacity:1!important;transform:none!important}
   #nav{animation:none!important;opacity:1!important}
-  /* HERO mobile - todo cabe sin scroll */
+  
   #hero{
     min-height:auto;
     padding:75px 5vw 40px;
@@ -633,7 +606,6 @@ footer{
   .hero-btns{width:100%;justify-content:center}
   .btn-lime{padding:13px 28px;font-size:13.5px}
 
-  /* Otros */
   .cat-grid{grid-template-columns:1fr}
   .c-card.sp2,.c-card.tall{grid-column:span 1;grid-row:span 1}
   .steps-wrap{grid-template-columns:1fr 1fr}
@@ -641,7 +613,6 @@ footer{
   .cg-item{border-right:none;border-bottom:1px solid rgba(244,239,230,.07)}
   .cg-item:last-child{border-bottom:none}
 
-  /* NAV mobile - pill centrado como desktop */
   #nav{
     left:50%;
     right:auto;
@@ -663,11 +634,10 @@ footer{
   .nav-links li a{font-size:10.5px;padding:5px 8px;letter-spacing:-.01em;line-height:1;display:block;white-space:nowrap}
   .nav-cta{font-size:10px!important;padding:6px 12px!important;flex-shrink:0;letter-spacing:-.01em;line-height:1.2;display:block;margin-left:4px}
 
-  /* Reducir ruido visual */
   #bg-canvas{opacity:.2}
 }
 @media(max-width:480px){
-  /* HERO ultra mobile */
+  
   #hero{padding:85px 5vw 50px}
   .hero-h1{font-size:clamp(32px,9.5vw,44px);margin-bottom:1.5rem}
   .hero-desc{font-size:13.5px}
@@ -676,24 +646,21 @@ footer{
   .hero-nums{gap:1.5rem;flex-direction:row}
   .btn-lime{font-size:12.5px;padding:12px 24px}
 
-  /* Process en columna */
   .steps-wrap{grid-template-columns:1fr}
   .about-callout{flex-direction:column;text-align:center}
 
-  /* Nav mas chico - mantener pill centrado */
   #nav{padding:6px 6px 6px 14px;top:10px;left:50%;right:auto;transform:translateX(-50%);max-width:calc(100vw - 16px)}
   .nav-logo{font-size:12px;margin-right:4px;gap:4px}
   .nav-links li a{font-size:10px;padding:4px 6px}
   .nav-cta{font-size:9.5px!important;padding:5px 11px!important;margin-left:2px}
 }
 @media(max-width:380px){
-  /* Ocultar Proceso para que entre todo */
+  
   .nav-links li:nth-child(3){display:none}
   .nav-links li a{font-size:10px;padding:4px 6px}
   .hero-h1{font-size:clamp(28px,8.5vw,38px)}
 }
 
-/* prefers-reduced-motion — keep opacity/color, remove transforms */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:.01ms!important;
@@ -703,6 +670,11 @@ footer{
   .hw{transform:none!important;opacity:1!important}
   .rv{transform:none!important}
 }
+
+*{-webkit-touch-callout:none;-webkit-user-drag:none}
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea{-webkit-user-select:text;-moz-user-select:text;user-select:text}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
 </style>
 </head>
 <body>
@@ -732,7 +704,6 @@ footer{
   </button>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <canvas id="sp-canvas"></canvas>
   <div class="hero-tag"><span class="tag-dot"></span>Diseño web · Buenos Aires · 2026</div>
@@ -765,7 +736,6 @@ footer{
 
 <div class="color-strip"></div>
 
-<!-- SOBRE NOSOTROS -->
 <section id="sobre-nosotros">
   <div class="about-blob ab1"></div>
   <div class="about-blob ab2"></div>
@@ -789,7 +759,6 @@ footer{
   </div>
 </section>
 
-<!-- POR QUÉ CONTRATARNOS — chart section -->
 <section id="por-que">
   <div class="pq-glow pqg1"></div>
   <div class="pq-glow pqg2"></div>
@@ -858,8 +827,6 @@ footer{
   </div>
 </section>
 
-
-<!-- PROCESO -->
 <section id="como-trabajamos">
   <p class="sec-label rv" style="color:var(--ink)">Proceso</p>
   <h2 class="proc-h2 rv rv-d1">Simple, rápido<br>y sin vueltas.</h2>
@@ -891,7 +858,6 @@ footer{
   </div>
 </section>
 
-<!-- CONTACTO -->
 <section id="contacto">
   <div class="con-glow"></div>
   <p class="con-lbl rv">Contratarnos</p>
@@ -908,7 +874,7 @@ footer{
   </div>
   <div class="con-grid rv rv-d4">
     <div class="cg-item"><p class="cg-l">Email</p><p class="cg-v">fluxaarg@gmail.com</p></div>
-    <div class="cg-item"><p class="cg-l">WhatsApp</p><p class="cg-v">+54 911 2306-0495</p></div>
+    <div class="cg-item"><p class="cg-l">WhatsApp</p><p class="cg-v">+54 11 2306-0495</p></div>
     <div class="cg-item"><p class="cg-l">Ubicación</p><p class="cg-v">Buenos Aires, Argentina</p></div>
   </div>
 </section>
@@ -919,17 +885,12 @@ footer{
 </footer>
 
 <script>
-/* ════════════════════════════════════════════
-   8 SITIOS — RADICALMENTE DISTINTOS, SERIOS
-   Para negocios y profesionales
-════════════════════════════════════════════ */
-/* ════ SCROLL ════ */
+
 const _IS_MOBILE = window.innerWidth < 768;
 
 function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
 function closeMM(){document.getElementById('mobile-menu').classList.remove('open')}
 
-/* ════ BG PARTICLES (only desktop) ════ */
 (()=>{
   if(_IS_MOBILE) return;
   const c=document.getElementById('bg-canvas'),ctx=c.getContext('2d');
@@ -955,7 +916,6 @@ function closeMM(){document.getElementById('mobile-menu').classList.remove('open
   loop();
 })();
 
-/* ════ SPARKLES (only desktop) ════ */
 (()=>{
   if(_IS_MOBILE) return;
   const c=document.getElementById('sp-canvas'),ctx=c.getContext('2d');
@@ -981,20 +941,18 @@ function closeMM(){document.getElementById('mobile-menu').classList.remove('open
   loop();
 })();
 
-/* ════ REVEAL ════ */
 if(_IS_MOBILE){
-  // In mobile, skip animations and show everything immediately
+  
   document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
 } else {
   const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.1});
   document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 }
 
-/* ════ COUNT UP ════ */
 const _cntP=document.getElementById('cnt-p');
 const _cntH=document.getElementById('cnt-h');
 if(_IS_MOBILE){
-  // En mobile, mostrar números directamente
+  
   if(_cntP)_cntP.textContent='42';
   if(_cntH)_cntH.textContent='96';
 } else {
@@ -1003,12 +961,11 @@ if(_IS_MOBILE){
   heroObs.observe(document.getElementById('hero'));
 }
 
-/* ════ CHART BAR ANIMATION — visible enter & exit on scroll ════ */
 let chartBarsInView = false;
 function setBarsTo(targetIsZero){
   const fills=document.querySelectorAll('.bar-fill');
   if(targetIsZero){
-    // Animate back to 0 visibly
+    
     fills.forEach((fill,i)=>{
       fill.style.transition='width .65s cubic-bezier(0.77,0,0.175,1)';
       setTimeout(()=>{
@@ -1017,7 +974,7 @@ function setBarsTo(targetIsZero){
     });
   } else {
     fills.forEach((fill,i)=>{
-      // reset to 0 with no animation, then animate up
+      
       fill.style.transition='none';
       fill.style.width='0';
       void fill.offsetWidth;
@@ -1028,8 +985,7 @@ function setBarsTo(targetIsZero){
     });
   }
 }
-/* rootMargin shrinks the viewport for the observer, so the bars
-   start collapsing BEFORE the chart fully leaves the screen */
+
 const chartObs=new IntersectionObserver(es=>{
   es.forEach(e=>{
     if(e.isIntersecting && !chartBarsInView){
@@ -1042,11 +998,34 @@ const chartObs=new IntersectionObserver(es=>{
   });
 },{
   threshold:0,
-  rootMargin:'-30% 0px -30% 0px'  // chart "leaves" viewport when 30% out from top or bottom
+  rootMargin:'-30% 0px -30% 0px'  
 });
 const chartEl=document.getElementById('chartBars');
 if(chartEl)chartObs.observe(chartEl);
 
+</script>
+
+<script>
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault()});
+  document.addEventListener('keydown',function(e){
+    if(e.keyCode===123)return e.preventDefault();
+    if(e.ctrlKey&&e.shiftKey&&(e.keyCode===73||e.keyCode===74||e.keyCode===67))return e.preventDefault();
+    if(e.ctrlKey&&e.keyCode===85)return e.preventDefault();
+    if(e.metaKey&&e.altKey&&(e.keyCode===73||e.keyCode===74||e.keyCode===67))return e.preventDefault();
+  });
+  document.addEventListener('selectstart',function(e){
+    if(e.target.tagName!=='INPUT'&&e.target.tagName!=='TEXTAREA')e.preventDefault();
+  });
+  document.addEventListener('dragstart',function(e){e.preventDefault()});
+  setInterval(function(){
+    var t=performance.now();
+    debugger;
+    if(performance.now()-t>100){
+      document.body.innerHTML='<div style="background:#08090a;color:#F4EFE6;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;text-align:center;"><div><h1 style="font-size:32px;margin-bottom:16px;">Acceso restringido</h1><p style="opacity:.6;">Por favor cerrá las herramientas de desarrollo y recargá la página.</p></div></div>';
+    }
+  },1000);
+})();
 </script>
 </body>
 </html>
